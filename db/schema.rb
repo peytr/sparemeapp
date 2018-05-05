@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_05_012841) do
+ActiveRecord::Schema.define(version: 2018_05_05_103058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,15 +18,16 @@ ActiveRecord::Schema.define(version: 2018_05_05_012841) do
   create_table "profiles", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
-    t.integer "house_number"
+    t.integer "street_number"
     t.string "street_name"
     t.string "suburb"
     t.string "state"
     t.string "postcode"
-    t.string "country_code"
+    t.string "country"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "business_name"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
