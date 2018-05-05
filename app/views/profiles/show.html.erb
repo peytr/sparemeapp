@@ -1,0 +1,25 @@
+<h1>Your Profile</h1>
+
+<p>
+    <p>First Name: <%= @profile.first_name %></p>
+</p>
+<p>
+    <p>Last Name: <%= @profile.last_name %></p>
+</p>
+<p>
+    <p>Address: <%= @profile.house_number %> <%= @profile.street_name %> <%= @profile.suburb %> <%= @profile.postcode %></p>
+</p>
+<p>
+    <p>State: <%= @profile.state %></p>
+</p>
+<p>
+    <p>Country: <%= @profile.country_code %></p>
+</p>
+
+<% if user_signed_in? %>
+    <%= link_to "Home", root_path %> |
+    <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+<% else %>
+    <%= link_to "Login", new_user_session_path %> |
+    <%= link_to "Sign up", new_user_registration_path %>
+<% end %>

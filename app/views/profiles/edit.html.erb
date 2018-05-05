@@ -1,0 +1,49 @@
+<h1>Your Profile</h1>
+
+<%= form_with(model: @profile, url: profile_path, local: true) do |form| %>
+
+    <div class="field">
+    <%= form.label :first_name %><br />
+    <%= form.text_field :first_name, required: true %>
+    </div>
+
+    <div class="field">
+        <%= form.label :last_name %><br />
+        <%= form.text_field :last_name, required: true  %>
+    </div>
+    <br />
+    <div class="field">
+        <%= form.label :house_number %><br />
+        <%= form.number_field :house_number, required: true  %>
+    </div>
+    <br />
+    <div class="field">
+        <%= form.label :street_name %><br />
+        <%= form.text_field :street_name, required: true  %>
+    </div>
+    <br />
+    <div class="field">
+        <%= form.label :suburb %><br />
+        <%= form.text_field :suburb, required: true  %>
+    </div>
+    <br />
+    <div class="field">
+        <%= form.label :state %><br />
+        <%= form.text_field :state, required: true  %>
+    </div>
+    <br />
+    <div class="field">
+        <%= form.label :postcode %><br />
+        <%= form.number_field :postcode, required: true  %>
+    </div>
+    <br />
+    <div class="field">
+        <%= form.label :country_code %><br />
+        <%= form.text_field :country_code, required: true  %>
+    </div>
+    <br />
+    <p>
+        <%= form.submit %>
+    </p>
+
+<% end %>
