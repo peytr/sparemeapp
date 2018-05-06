@@ -8,7 +8,7 @@ class RequestsController < ApplicationController
     end
 
     def new
-        @request = current_user.request.new
+        @request = Request.new
     end
 
     def edit
@@ -18,6 +18,18 @@ class RequestsController < ApplicationController
     end
 
     def create
-        render plain: params[:request].inspect
+        # render plain: params[:request].inspect
+        @request = Request.new(request_params)
+        
+        if @request.save
+            redirect_to index_path
+        else
+            render new_path
+        end
+    end
+
+    private
+    def request_params
+        params.require(:request).permit()
     end
 end

@@ -1,6 +1,6 @@
 <h1>Request a Spare Part</h1>
 
-<%= form_for :request, url: request_path do |form| %>
+<%= form_with(:request, url: request_path) do |form| %>
     <div class="field">  
         <%= form.label :part_name %><br />
         <%= form.text_field :part_name, required: true  %>
