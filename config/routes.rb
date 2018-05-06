@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  # match ':controller(/:action(/:id))', :via => :get
+
   get '/profile', to: 'profiles#show'
 
   post '/profile', to: 'profiles#create'
@@ -13,6 +15,10 @@ Rails.application.routes.draw do
   patch '/profile', to: 'profiles#update'
 
 
+  
+
+  get '/requests/index', to: 'requests#index'
+  
   get '/requests/new', to: 'requests#new'
 
   get '/request', to: 'requests#show'

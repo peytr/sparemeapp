@@ -1,1 +1,8 @@
 <h1>Requests Index</h1>
+
+
+<% @requests.each do |request| %>
+    <p>Part Name: <%= request.part_name %></p>
+    <p>Part Description: <%= request.part_description %></p>
+    <p><%= link_to  "Show Request", request %></p>
+<% end %>
