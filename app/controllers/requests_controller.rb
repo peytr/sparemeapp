@@ -8,6 +8,7 @@ class RequestsController < ApplicationController
     end
 
     def new
+        @request = current_user.request.new
     end
 
     def edit
