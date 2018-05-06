@@ -1,0 +1,43 @@
+<h1>Request a Spare Part</h1>
+
+<%= form_for :request, url: request_path do |form| %>
+    <div class="field">  
+        <%= form.label :part_name %><br />
+        <%= form.text_field :part_name, required: true  %>
+    </div>
+
+    <div class="field">  
+        <%= form.label :part_description %><br />
+        <%= form.text_field :part_description, required: true  %>
+    </div>
+
+    <div class="field">  
+        <%= form.label :car_make %><br />
+        <%= form.text_field :car_make, required: true  %>
+    </div>
+
+    <div class="field">  
+        <%= form.label :car_model %><br />
+        <%= form.text_field :car_model, required: true  %>
+    </div>
+
+    <div class="field">  
+        <%= form.label :car_series %><br />
+        <%= form.text_field :car_series, required: true  %>
+    </div>
+
+    <div class="field">  
+        <%= form.label :car_year %><br />
+        <%= form.text_field :car_year, required: true  %>
+    </div>
+
+    <div class="field">  
+        <%= form.label :image_data %><br />
+        <%= form.text_field :image_data, required: true  %>
+    </div>
+
+    <p>
+        <%= form.submit %>
+    </p>
+
+<% end %>

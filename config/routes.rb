@@ -12,4 +12,15 @@ Rails.application.routes.draw do
 
   patch '/profile', to: 'profiles#update'
 
+
+  get '/requests/new', to: 'requests#new'
+
+  get '/request', to: 'requests#show'
+
+  post '/request', to: 'requests#create'
+
+  get '/request/edit', to: 'requests#edit'
+
+  patch '/request', to: 'requests#update'
+
 end
