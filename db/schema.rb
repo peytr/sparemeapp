@@ -10,10 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_05_103058) do
+ActiveRecord::Schema.define(version: 2018_05_06_045720) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "offers", force: :cascade do |t|
+    t.text "message"
+    t.decimal "price"
+    t.text "image_data"
+    t.boolean "accepted"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_offers_on_user_id"
+  end
+
+  create_table "parts_requests", force: :cascade do |t|
+    t.string "part_name"
+    t.text "part_description"
+    t.string "car_make"
+    t.string "car_model"
+    t.string "car_series"
+    t.string "car_year"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "image_data"
+    t.index ["user_id"], name: "index_parts_requests_on_user_id"
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.string "first_name"
@@ -28,7 +53,24 @@ ActiveRecord::Schema.define(version: 2018_05_05_103058) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "business_name"
+    t.string "business_number"
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.string "part_name"
+    t.text "part_description"
+    t.string "car_make"
+    t.string "car_model"
+    t.string "car_series"
+    t.string "car_year"
+    t.text "image_data"
+    t.bigint "user_id"
+    t.bigint "offer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["offer_id"], name: "index_requests_on_offer_id"
+    t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,5 +90,9 @@ ActiveRecord::Schema.define(version: 2018_05_05_103058) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "offers", "users"
+  add_foreign_key "parts_requests", "users"
   add_foreign_key "profiles", "users"
+  add_foreign_key "requests", "offers"
+  add_foreign_key "requests", "users"
 end
