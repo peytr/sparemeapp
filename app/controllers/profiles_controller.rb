@@ -42,12 +42,12 @@ class ProfilesController < ApplicationController
         params.require(:profile).permit([
             :first_name, 
             :last_name,
-            :house_number,
+            :street_number,
             :street_name,
             :suburb,
             :state,
             :postcode,
-            :country_code
+            :country
         ])
     end
 end

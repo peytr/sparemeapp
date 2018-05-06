@@ -13,8 +13,8 @@
     </div>
     <br />
     <div class="field">
-        <%= form.label :house_number %><br />
-        <%= form.number_field :house_number, required: true  %>
+        <%= form.label :street_number %><br />
+        <%= form.number_field :street_number, required: true  %>
     </div>
     <br />
     <div class="field">
@@ -38,10 +38,19 @@
     </div>
     <br />
     <div class="field">
-        <%= form.label :country_code %><br />
-        <%= form.text_field :country_code, required: true  %>
+        <%= form.label :country %><br />
+        <%= form.text_field :country, required: true  %>
     </div>
     <br />
+    <div class="field">
+        <%= form.label :business_name %><br />
+        <%= form.text_field :business_name %>
+    </div>
+    <br />
+    <div class="field">
+        <%= form.label :business_number %><br />
+        <%= form.text_field :business_number %>
+    </div>
     <p>
         <%= form.submit %>
     </p>

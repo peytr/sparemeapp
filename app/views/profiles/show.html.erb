@@ -7,13 +7,13 @@
     <p>Last Name: <%= @profile.last_name %></p>
 </p>
 <p>
-    <p>Address: <%= @profile.house_number %> <%= @profile.street_name %> <%= @profile.suburb %> <%= @profile.postcode %></p>
+    <p>Address: <%= @profile.street_number %> <%= @profile.street_name %> <%= @profile.suburb %> <%= @profile.postcode %></p>
 </p>
 <p>
     <p>State: <%= @profile.state %></p>
 </p>
 <p>
-    <p>Country: <%= @profile.country_code %></p>
+    <p>Country: <%= @profile.country %></p>
 </p>
 
 <% if user_signed_in? %>
