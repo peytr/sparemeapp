@@ -1,0 +1,22 @@
+<%= form_with(model: offer, url: request_offers_path, local: true) do |f| %>
+
+    <div class="field">  
+        <%= f.label :message %><br />
+        <%= f.text_area :message, required: true  %>
+    </div>
+
+    <div class="field">  
+        <%= f.label :price %><br />
+        <%= f.number_field :price, required: true  %>
+    </div>
+
+    <div class="field">  
+        <%= f.label :image_data %><br />
+        <%= f.text_field :image_data %>
+    </div>
+
+    <p>
+        <%= f.submit %>
+    </p>
+
+<% end %>
