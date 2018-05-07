@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_06_045720) do
+ActiveRecord::Schema.define(version: 2018_05_07_024055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,10 +66,8 @@ ActiveRecord::Schema.define(version: 2018_05_06_045720) do
     t.string "car_year"
     t.text "image_data"
     t.bigint "user_id"
-    t.bigint "offer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["offer_id"], name: "index_requests_on_offer_id"
     t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
@@ -93,6 +91,5 @@ ActiveRecord::Schema.define(version: 2018_05_06_045720) do
   add_foreign_key "offers", "users"
   add_foreign_key "parts_requests", "users"
   add_foreign_key "profiles", "users"
-  add_foreign_key "requests", "offers"
   add_foreign_key "requests", "users"
 end
