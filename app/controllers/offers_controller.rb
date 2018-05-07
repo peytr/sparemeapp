@@ -21,6 +21,7 @@ class OffersController < ApplicationController
   end
 
   def edit
+    @offer = Offer.find_or_initialize_by(user: current_user)
   end
 
   def show
