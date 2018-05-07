@@ -9,5 +9,5 @@ class User < ApplicationRecord
   # User.find(2).profile.first_name
   # makes your method singular
   has_one :profile
-  has_many :requests
+  has_many :requests 
 end

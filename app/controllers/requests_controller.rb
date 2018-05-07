@@ -8,6 +8,7 @@ class RequestsController < ApplicationController
     end
 
     def show
+
     end
 
     def new
@@ -24,11 +25,11 @@ class RequestsController < ApplicationController
         @request = Request.new(request_params)
         @request.user = current_user
         if @request.save
-            flash[:notice] = 'Spare Parts Request Submitted'
+            flash[:notice] = 'Thanks! Your Spare Parts Request has been Submitted. We will be in touch as soon as a parts offer has been recieved.'
             redirect_to requests_path
         else
             flash[:alert] = 'Could Not Save Spare Parts Request'
-            redirect_to root_path
+            redirect_back fallback_location: new_request_path
         end
     end
 
@@ -40,4 +41,5 @@ class RequestsController < ApplicationController
     def set_request
         @request = Request.find(params[:id])
     end
+
 end

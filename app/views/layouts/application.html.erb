@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TestAppTen</title>
+    <title>Spare Me</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,11 +10,8 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <%= yield %>
-
+    <h1>Spare Me</h1>
+    <h3>List Your Spare Parts Needs and Have the Market Come to You</h3>
     <% if user_signed_in? %>
         <%= link_to "Home", root_path %> |
         <%= link_to 'Edit Profile', profile_edit_path %> |
@@ -23,5 +20,11 @@
         <%= link_to "Login", new_user_session_path %> |
         <%= link_to "Sign up", new_user_registration_path %>
     <% end %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <%= yield %>
+
+    
   </body>
 </html>
