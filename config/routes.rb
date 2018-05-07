@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   
+  get 'offers/new'
+  get 'offers/edit'
+  get 'offers/show'
   root 'pages#home'
 
   devise_for :users
-
-  # match ':controller(/:action(/:id))', :via => :get
 
   get '/profile', to: 'profiles#show'
 
@@ -15,7 +16,9 @@ Rails.application.routes.draw do
   patch '/profile', to: 'profiles#update'
 
 
-  resources :requests
+  resources :requests do
+    resources :offers
+  end
 
   # get '/requests/index', to: 'requests#index'
   
