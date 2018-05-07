@@ -30,7 +30,7 @@ At SpareMe do away with the hassle of parts searching. Post the part you require
 ## Trello Board
 [Trello Board - SpareMe - Car Spare Parts Seeker](https://trello.com/b/Z573GKaa)
 
-![Trello Image](storage/readme-images/trello-02.png)
+![Trello Image](bin/readme-images/trello-02.png)
 
 My trello board is the main driver of my project management. It allowed me to plan ahead with User Stories, User Workflow, Models, Controllers, ERD and Wireframes.
 
@@ -77,7 +77,7 @@ __Robert__
 was driving a 2004 Ford Falcon BA. He hadn't had the car serviced for years and as a result the engine blew. Instead of spending the thousands to repair the car Robert has decided to strip the car and sell it for parts. Rob creates a seller profile on SpareMe and keeps a watch out for anyone needing some BA parts.
 
 ## User Workflow
-![](storage/readme-images/workflow-02.png)
+![](bin/readme-images/workflow-02.png)
 
 __Registration__
 - User clicks on get started.
@@ -199,7 +199,7 @@ __Conversations__
 - sender_id
 - recipient_id
   
-![](storage/readme-images/ERD-04.png)
+![](bin/readme-images/ERD-04.png)
 
 
 ## Design Inspiration and Mood Board
@@ -213,30 +213,30 @@ I want to have a clean designed app so I searched pinterest for some automotive 
 
 Pinterest mood board
 
-![Mood Board Image](storage/readme-images/moodboard-pinterest.png)
+![Mood Board Image](bin/readme-images/moodboard-pinterest.png)
 
 [Link to Figma](https://www.figma.com/file/RXCZRqddfEexjEAer8ezEATZ/SpareMe)
 
 Figma mood board
 
-![Mood Board Image](storage/readme-images/moodboard-figma.png)
+![Mood Board Image](bin/readme-images/moodboard-figma.png)
 
 ## Colours and Font Choice
 
-![Mood Board Image](storage/readme-images/colours-font.png)
+![Mood Board Image](bin/readme-images/colours-font.png)
 
 ## Logo
 The site logo is a simple spanner in a circle to symbolise repairs. This will be the favicon. The Spare Me is not spaced but the words differentiated by a colour change.
 
-![Mood Board Image](storage/readme-images/logo.png)
+![Mood Board Image](bin/readme-images/logo.png)
 
 ## Wireframes
 
 ### Mobile
-![](storage/readme-images/wireframe-mobile.png)
+![](bin/readme-images/wireframe-mobile.png)
 
 ### Desktop
-![](storage/readme-images/wireframe-desktop.png)
+![](bin/readme-images/wireframe-desktop.png)
 
 
 ## Features
