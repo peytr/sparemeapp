@@ -8,7 +8,6 @@ class RequestsController < ApplicationController
     end
 
     def show
-
     end
 
     def new
@@ -26,7 +25,7 @@ class RequestsController < ApplicationController
         @request.user = current_user
         if @request.save
             flash[:notice] = 'Thanks! Your Spare Parts Request has been Submitted. We will be in touch as soon as a parts offer has been recieved.'
-            redirect_to requests_path
+            redirect_to request_offer_path
         else
             flash[:alert] = 'Could Not Save Spare Parts Request'
             redirect_back fallback_location: new_request_path

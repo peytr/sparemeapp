@@ -1,4 +1,10 @@
 class Request < ApplicationRecord
   belongs_to :user
-  # belongs_to :offer, class_name: 'User'
+  has_many :offers
+  
+  accepts_nested_attributes_for :offers
+
+  def winning_offer
+    self.offers.where(accepted: true)
+  end
 end

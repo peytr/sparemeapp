@@ -4,29 +4,22 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  # match ':controller(/:action(/:id))', :via => :get
-
   get '/profile', to: 'profiles#show'
-
   post '/profile', to: 'profiles#create'
-
   get '/profile/edit', to: 'profiles#edit'
-
   patch '/profile', to: 'profiles#update'
 
+  post '/requests/:request_id/offers', to: 'offers#create', as: 'requests_offer'
 
-  resources :requests
+  resources :requests do
+    resources :offers
+  end
 
   # get '/requests/index', to: 'requests#index'
-  
   # get '/requests/new', to: 'requests#new'
-
   # get '/request', to: 'requests#show'
-
   # post '/request', to: 'requests#create'
-
   # get '/request/edit', to: 'requests#edit'
-
   # patch '/request', to: 'requests#update'
 
 end
