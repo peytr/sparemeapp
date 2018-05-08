@@ -1,4 +1,4 @@
-<%= form_with(model: offer, url: request_offers_path, local: true) do |f| %>
+<%= form_with(model: offer, url: requests_offer_path, local: true) do |f| %>
 
     <div class="field">  
         <%= f.label :message %><br />
@@ -13,6 +13,10 @@
     <div class="field">  
         <%= f.label :image_data %><br />
         <%= f.text_field :image_data %>
+    </div>
+
+    <div class="field">  
+        <%#= f.hidden_field :user_id, value: current_user.id %><br />
     </div>
     
     <p>

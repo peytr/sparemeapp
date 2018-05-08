@@ -9,8 +9,7 @@ Rails.application.routes.draw do
   get '/profile/edit', to: 'profiles#edit'
   patch '/profile', to: 'profiles#update'
 
-  post '/requests/:request_id/offers', to: 'offers#create'
-  get '/requests/:request_id/offers:id', to: 'offers#show'
+  post '/requests/:request_id/offers', to: 'offers#create', as: 'requests_offer'
 
   resources :requests do
     resources :offers

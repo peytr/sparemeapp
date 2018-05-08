@@ -1,6 +1,7 @@
 class OffersController < ApplicationController
 
   before_action :authenticate_user!
+  before_action :set_offer, only: [:show, :edit, :update, :delete]
 
   def new
     @offer = Offer.new
@@ -10,6 +11,8 @@ class OffersController < ApplicationController
   def create
     @offer = Offer.new(offer_params)
     @request = Request.find(params[:request_id])
+    @offer.user_id = current_user.id
+    @offer.request_id = @request
 
     if @offer.save
       flash[:notice] = 'Parts Offer has been submitted. We will notify you if you offer has been accepted.'
@@ -26,10 +29,16 @@ class OffersController < ApplicationController
 
   def show
   end
-
+  
   private
+  
+  def set_offer
+    @offer = Offer.find(params[:id])
+  end
+
   def offer_params
     params.require(:offer).permit(:message, :price, :image_data)
   end
+
 
 end
