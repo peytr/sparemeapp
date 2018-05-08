@@ -9,12 +9,13 @@ class OffersController < ApplicationController
   end
 
   def create
-    @offer = Offer.new(offer_params)
-    @request = Request.find(params[:request_id])
-    @offer.user_id = current_user.id
-    @offer.request_id = @request
+    offer = Offer.new(offer_params)
+    request = Request.find(params[:request_id])
+    
+    offer.user = current_user
+    offer.request = request
 
-    if @offer.save
+    if offer.save
       flash[:notice] = 'Parts Offer has been submitted. We will notify you if you offer has been accepted.'
       redirect_to root_path
     else
