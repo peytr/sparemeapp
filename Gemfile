@@ -23,6 +23,11 @@ gem 'shrine',       '~> 2.11'
 gem 'mailgun-ruby', '~> 1.1', '>= 1.1.9'
 gem 'faker',        '~> 1.8', '>= 1.8.7'
 
+#Shrine despendecies
+gem 'mini_magick',      '~> 4.8'
+gem 'image_processing', '~> 1.2'
+gem 'aws-sdk-s3',       '~> 1.9', '>= 1.9.1'
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

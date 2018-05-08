@@ -5,8 +5,8 @@
     <p>Part Description: <%= @request.part_description %></p>
 </p>
 <p>
-    <p>Your Car: <%= @request.car_year %> <%= @request.car_make %> <%= @request.car_model %> <%= @request.car_series %> </p>
+    <p>Car Details: <%= @request.car_year %> <%= @request.car_make %> <%= @request.car_model %> <%= @request.car_series %> </p>
 </p>
 <p>
-    <p>Images: <%= @request.image_data %></p>
+    <p>Image: <%= image_tag @request.image_url(:medium) %></p>
 </p>

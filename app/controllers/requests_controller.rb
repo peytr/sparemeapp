@@ -23,9 +23,10 @@ class RequestsController < ApplicationController
     def create
         @request = Request.new(request_params)
         @request.user = current_user
+
         if @request.save
             flash[:notice] = 'Thanks! Your Spare Parts Request has been Submitted. We will be in touch as soon as a parts offer has been recieved.'
-            redirect_to request_offer_path
+            redirect_to profile_path
         else
             flash[:alert] = 'Could Not Save Spare Parts Request'
             redirect_back fallback_location: new_request_path
@@ -34,7 +35,7 @@ class RequestsController < ApplicationController
 
     private
     def request_params
-        params.require(:request).permit(:part_name, :part_description, :car_make, :car_model, :car_series, :car_year, :image_data)
+        params.require(:request).permit(:part_name, :part_description, :car_make, :car_model, :car_series, :car_year, :image)
     end
 
     def set_request

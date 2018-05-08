@@ -8,7 +8,7 @@
 
     <div class="field">  
         <%= f.label :part_description %><br />
-        <%= f.text_field :part_description, required: true  %>
+        <%= f.text_area :part_description, required: true  %>
     </div>
 
     <div class="field">  
@@ -32,8 +32,9 @@
     </div>
 
     <div class="field">  
-        <%= f.label :image_data %><br />
-        <%= f.file_field :image_data %>
+        <%= f.label :image %><br />
+        <%= f.hidden_field :image, value: @request.cached_image_data %>
+        <%= f.file_field :image %>
     </div>
 
     <p>
