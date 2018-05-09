@@ -13,4 +13,8 @@
     <p>Image: <%= image_tag @request.image_url(:medium) %></p>
 </p>
 
+<% if policy(@request).edit? %>
+    <%= link_to  "Edit Request", edit_request_path  %>
+<% end %>
+
 <h3><%= link_to "Make a Spare Parts Offer", new_request_offer_path(@request)  %></h3>

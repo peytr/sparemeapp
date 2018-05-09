@@ -4,28 +4,23 @@ class RequestPolicy < ApplicationPolicy
         true
     end
     
-    def show?
-        true
+    def create?
+        user.present?
     end
-
-    def create? 
-        true
-    end
-
-    def new?
-        true
-    end
-
-    def update?
-        true
-    end
-
+    
     def edit?
-        true
+        return true if user.present? && user == request.user
     end
 
     def destroy?
-        true
+        return true if user.present? && user == request.user
+    end
+
+    private
+ 
+    def request
+      record
     end
 
 end
+

@@ -1,7 +1,6 @@
 class ProfilesController < ApplicationController
 
     before_action :authenticate_user!
-    after_action :verify_authorized, unless: :devise_controller?
 
     def index
         authorize @profile
@@ -10,18 +9,15 @@ class ProfilesController < ApplicationController
     def show
         redirect_to :root unless user_signed_in?
         @profile = current_user.profile
-        authorize @profile
     end
 
     def edit
         @profile = Profile.find_or_initialize_by(user: current_user)
-        authorize @profile
     end
         
     def create
         @profile = Profile.new(profile_params)
         @profile.user = current_user
-        authorize @profile
 
         if @profile.save
             flash[:notice] = 'Profile Updated'
@@ -34,7 +30,6 @@ class ProfilesController < ApplicationController
 
     def update
         @profile = current_user.profile
-        authorize @profile
 
         if @profile.update(profile_params)
             flash[:notice] = 'Profile Updated'
@@ -48,9 +43,5 @@ class ProfilesController < ApplicationController
     private
     def profile_params
         params.require(:profile).permit(:first_name, :last_name, :street_number, :street_name, :suburb, :state, :postcode, :country)
-    end
-
-    def profile
-        record
     end
 end

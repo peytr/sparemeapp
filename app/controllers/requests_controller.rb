@@ -1,7 +1,9 @@
 class RequestsController < ApplicationController
-
     before_action :authenticate_user!
-    before_action :set_request, only: [:show, :edit, :update, :delete]
+    before_action :set_request, only: [:show, :edit, :update, :destroy]
+    
+
+    
 
     def index
         @requests = Request.all
@@ -17,7 +19,7 @@ class RequestsController < ApplicationController
     def edit
     end
 
-    def delete
+    def destroy
     end
 
     def create
@@ -40,6 +42,7 @@ class RequestsController < ApplicationController
 
     def set_request
         @request = Request.find(params[:id])
+        authorize @request
     end
 
 end
