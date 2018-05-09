@@ -1,9 +1,6 @@
 class RequestsController < ApplicationController
     before_action :authenticate_user!
     before_action :set_request, only: [:show, :edit, :update, :destroy]
-    
-
-    
 
     def index
         @requests = Request.all
@@ -17,6 +14,23 @@ class RequestsController < ApplicationController
     end
 
     def edit
+        @request = Request.find_or_initialize_by(user: current_user)
+        # @request = Request.find(request_params)
+        @request = Request.find(params[:id])
+        # @request = current_user.request
+        @request.user = current_user 
+    end
+
+    def update
+        @request = current_user.request
+
+        if @request.update(request_params)
+            flash[:notice] = 'Spare Parts Request Updated'
+            redirect_to profile_path
+        else
+            flash[:alert] = 'Could not save spare parts request'
+            redirect_back(fallback_location: profile_path)
+        end
     end
 
     def destroy
@@ -34,6 +48,7 @@ class RequestsController < ApplicationController
             redirect_back fallback_location: new_request_path
         end
     end
+
 
     private
     def request_params

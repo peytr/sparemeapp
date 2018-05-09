@@ -5,21 +5,28 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <h1>Spare Me</h1>
-    <h3>List Your Spare Parts Needs and Have the Market Come to You</h3>
-    <% if user_signed_in? %>
-        <%= link_to "Home", root_path %> |
-        <%= link_to 'Edit Profile', profile_edit_path %> |
-        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <% else %>
-        <%= link_to "Login", new_user_session_path %> |
-        <%= link_to "Sign up", new_user_registration_path %>
-    <% end %>
+
+  <header id="header">
+    <a href=" / " class="logo">SPARE<span>ME</span></a>
+    <nav class="right">
+      <% if user_signed_in? %>
+          <%= link_to "Home", root_path %> |
+          <%= link_to 'View Profile', profile_path %> |
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      <% else %>
+          <%= link_to "Login", new_user_session_path %> |
+          <%= link_to "Sign up", new_user_registration_path %>
+      <% end %>
+    </nav>
+  </header>
+
+   
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 

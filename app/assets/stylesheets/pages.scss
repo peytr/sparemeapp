@@ -1,3 +1,25 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.logo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3em;
+    text-decoration: none;
+    font-weight: 900;
+    letter-spacing: -2px;
+    color: #000;
+}
+
+.logo a {
+    text-decoration: none;
+}
+
+.logo span {
+    color: #227722;
+}

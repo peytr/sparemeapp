@@ -1,20 +1,34 @@
-<h1>Offers#show</h1>
-<p>Find me in app/views/offers/show.html.erb</p>
+<h1>Available Offers</h1>
+
+<h3>Reqeusted Parts Details</h3>
+
+
+<h3>Offer Details</h3>
+
+
+    <% @offer.where(request_id: current_id).find_each do |offer| %>
+    <p>Offer Message</p>
+      <p><%= offer.message %></p>
+    <p>Offer Price</p>
+      <p><%= @offer.price %></p>
+      <% end %>
 
 
 
-<% if false %>
-<p>
-    <p>Part Name: <%= @request.part_name %></p>
-</p>
-<p>
-    <p>Part Description: <%= @request.part_description %></p>
-</p>
-<p>
-    <p>Your Car: <%= @request.car_year %> <%= @request.car_make %> <%= @request.car_model %> <%= @request.car_series %> </p>
-</p>
-<p>
-    <p>Images: <%= @request.image_data %></p>
-</p>
 
+
+
+
+<% if user_signed_in? %>
+  <%= render 'charge_form', post: @request %>
+<% else %>
+<%= link_to new_user_session_path, class:'stripe-button-el' do %>
+  <span style="display: block; min-height: 30px;">Accept Offer and Buy</span>
+  <% end %>
 <% end %>
+
+<%= form_with model: @request, url: offer_path, method: :get, local: true, class: 'form' do |form| %>
+  <%= form.hidden_field :id %>
+  <%= form.submit "Make Appraisal", class: 'btn btn-secondary' %>
+<% end %>
+

@@ -1,0 +1,46 @@
+<h1>Edit Spare Parts Request</h1>
+
+
+<%= form_with(model: request, url: edit_request_path, local: true) do |f| %>
+
+    <div class="field">  
+        <%= f.label :part_name %><br />
+        <%= f.text_field :part_name, required: true  %>
+    </div>
+
+    <div class="field">  
+        <%= f.label :part_description %><br />
+        <%= f.text_area :part_description, required: true  %>
+    </div>
+
+    <div class="field">  
+        <%= f.label :car_make %><br />
+        <%= f.text_field :car_make  %>
+    </div>
+
+    <div class="field">  
+        <%= f.label :car_model %><br />
+        <%= f.text_field :car_model %>
+    </div>
+
+    <div class="field">  
+        <%= f.label :car_series %><br />
+        <%= f.text_field :car_series %>
+    </div>
+
+    <div class="field">  
+        <%= f.label :car_year %><br />
+        <%= f.text_field :car_year %>
+    </div>
+
+    <div class="field">  
+        <%= f.label :image %><br />
+        <%= f.hidden_field :image, value: @request.cached_image_data %>
+        <%= f.file_field :image %>
+    </div>
+
+    <p>
+        <%= f.submit %>
+    </p>
+
+<% end %>

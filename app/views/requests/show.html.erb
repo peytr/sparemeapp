@@ -1,4 +1,4 @@
-<h1>Your Spare Parts Request</h1>
+<h3>Your Spare Parts Request</h3>
 
 <p>
     <p>Part Name: <%= @request.part_name %></p>
@@ -10,11 +10,15 @@
     <p>Your Car: <%= @request.car_year %> <%= @request.car_make %> <%= @request.car_model %> <%= @request.car_series %> </p>
 </p>
 <p>
-    <p>Image: <%= image_tag @request.image_url(:medium) %></p>
+    <p><%= image_tag @request.image_url(:medium) %></p>
 </p>
 
 <% if policy(@request).edit? %>
-    <%= link_to  "Edit Request", edit_request_path  %>
+    <%= link_to  "Edit Request", edit_request_path  %> | 
 <% end %>
 
-<h3><%= link_to "Make a Spare Parts Offer", new_request_offer_path(@request)  %></h3>
+<% if current_user == Request.where(user_id: current_user) %>
+    <%= link_to "Make a Spare Parts Offer", new_request_offer_path(@request) %>
+<% else %>
+    <%= link_to  "View Offers", offer_show_path  %>
+<% end %>

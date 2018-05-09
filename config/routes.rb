@@ -8,18 +8,25 @@ Rails.application.routes.draw do
   post '/contact', to: 'pages#contact_email'
 
 
-
-
   get '/profile', to: 'profiles#show'
   post '/profile', to: 'profiles#create'
   get '/profile/edit', to: 'profiles#edit'
   patch '/profile', to: 'profiles#update'
 
   post '/requests/:request_id/offers', to: 'offers#create', as: 'requests_offer'
+  # patch '/request/:request_id', to: 'requests#update'
 
   resources :requests do
     resources :offers
   end
+
+  resources :offers do
+    member do
+      post :accept_offer
+    end
+  end
+
+  get 'offer/show', to: 'offers#show'
 
   # get '/requests/index', to: 'requests#index'
   # get '/requests/new', to: 'requests#new'

@@ -6,7 +6,4 @@ class Request < ApplicationRecord
   
   accepts_nested_attributes_for :offers
 
-  def winning_offer
-    self.offers.where(accepted: true)
-  end
 end

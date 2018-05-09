@@ -23,3 +23,28 @@ remote: ###### WARNING:
 remote:        No Procfile detected, using the default web server.
 remote:        We recommend explicitly declaring how to boot your server process via a Procfile.
 remote:        https://devcenter.heroku.com/articles/ruby-default-web-server
+
+
+__Request info for offer show__
+<p>
+    <p>Part Name: <%= @request.part_name %></p>
+</p>
+<p>
+    <p>Part Description: <%= @request.part_description %></p>
+</p>
+<p>
+    <p>Your Car: <%= @request.car_year %> <%= @request.car_make %> <%= @request.car_model %> <%= @request.car_series %> </p>
+</p>
+<p>
+    <p>Images: <%= @request.image_data %></p>
+</p>
+
+__was in application.html.erb__
+    <% if user_signed_in? %>
+        <%= link_to "Home", root_path %> |
+        <%= link_to 'Edit Profile', profile_edit_path %> |
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <% else %>
+        <%= link_to "Login", new_user_session_path %> |
+        <%= link_to "Sign up", new_user_registration_path %>
+    <% end %>

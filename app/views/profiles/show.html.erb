@@ -1,7 +1,8 @@
-<h1>Your Profile</h1>
+<h3>Your Profile</h3>
 
 <p>
-    <p>First Name: <%= @profile.first_name %></p>
+    First Name:
+    <%= @profile.first_name %>
 </p>
 <p>
     <p>Last Name: <%= @profile.last_name %></p>
@@ -15,3 +16,15 @@
 <p>
     <p>Country: <%= @profile.country %></p>
 </p>
+
+<%= link_to 'Edit Profile', profile_edit_path %>
+
+<hr>
+
+<h3>Your Spare Parts Requests</h3>
+
+<% Request.where(user_id: current_user).find_each do |request| %>
+    <p>Requested Part</p>
+    <p><%= request.part_name %></p>
+    <p><%= link_to  "Show Request", request %></p>
+<% end %>
