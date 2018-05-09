@@ -1,0 +1,17 @@
+<h1>Your Enquiry</h1>
+
+<%= form_for :contact do |f| %>
+    <p> <strong>
+        <%= f.label :full_name %>
+        <%= f.text_field :name %>
+        </strong>
+    </p>
+    <p> 
+        <strong>
+        <%= f.label :message%>
+        <%= f.text_area :message%>
+        </strong>
+    <p>    
+        <%= f.submit "Send" %>
+    </p>
+<% end %>

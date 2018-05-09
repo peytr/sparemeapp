@@ -4,6 +4,12 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  get '/contact', to: 'pages#show'
+  post '/contact', to: 'pages#contact_email'
+
+
+
+
   get '/profile', to: 'profiles#show'
   post '/profile', to: 'profiles#create'
   get '/profile/edit', to: 'profiles#edit'
