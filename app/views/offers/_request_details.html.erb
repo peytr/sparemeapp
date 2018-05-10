@@ -1,12 +1,19 @@
-<p>
-    <p>Part Name: <%= @request.part_name %></p>
-</p>
-<p>
-    <p>Part Description: <%= @request.part_description %></p>
-</p>
-<p>
-    <p>Car Details: <%= @request.car_year %> <%= @request.car_make %> <%= @request.car_model %> <%= @request.car_series %> </p>
-</p>
-<p>
-    <p>Image: <%= image_tag @request.image_url(:medium) %></p>
-</p>
+<div class="offers-show">
+    <div class="row">
+        <li>
+            <label>Part:</label>
+            <output><%= @request.part_name %></output>
+            <br>
+            <br>
+            <label>Description:</label>
+            <output><%= @request.part_description %></output>
+            <br>
+            <br>
+            <label>For:</label>
+            <output><%= @request.car_year %> <%= @request.car_make %> <%= @request.car_model %></output>
+            <br>
+            <br>
+            <output><%= image_tag @request.image_url(:medium) %></output>
+        </li>
+    </div>
+</div>

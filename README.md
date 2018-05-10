@@ -253,5 +253,15 @@ The Spare Me site name text is not spaced but the words differentiated by a colo
 - 
 
 ## Future Development / Improvements
-- 
-- 
+- Add messaging function between buyers and sellers.
+- Upload several images for one request.
+- Add image upload for offers.
+- Make images responsive.
+
+
+Final To Do
+- Clear DB
+- Load db with some users, requests, offers
+- Save some images for presentation
+- Finalise readme
+- Final check

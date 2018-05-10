@@ -1,14 +1,26 @@
-<h3>Offer Details</h3>
+<div class="offers-show">
+  <div class="row">
+    <h3>Offer Details</h3>
+    <ul class="offers-list">
+      <li>
+        <label>Message:</label>
+        <output><%= @offer.message %></output>
+        <br>
+        <br>
+        <label>Price:</label>
+        <output><%= @offer.price %></output>
+      </li>
+      <div class="stripe-pay">
+        <% if user_signed_in? %>
+          <%= render 'charge_form', post: @request %>
+        <% else %>
+          <%= link_to new_user_session_path, class:'stripe-button-el' do %>
+            <span style="display: block; min-height: 30px;">Accept Offer and Buy</span>
+            <% end %>
+        <% end %>
+      </div>
+    </ul>
+  </div>
+</div>
 
-<p>Message: <%= @offer.message %></p>
-<p>Price: <%= @offer.price %></p>
-
-
-<% if user_signed_in? %>
-  <%= render 'charge_form', post: @request %>
-<% else %>
-<%= link_to new_user_session_path, class:'stripe-button-el' do %>
-  <span style="display: block; min-height: 30px;">Accept Offer and Buy</span>
-  <% end %>
-<% end %>
 

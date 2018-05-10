@@ -1,5 +1,25 @@
-<h1>Send a Spare Parts Offer</h1>
-
-<%= render 'request_details' %>
-
-<%= render 'form', offer: @offer %>
+<div class="offers-show">
+    <div class="row">
+    <h2>Send a Spare Parts Offer</h2>
+        <ul class="offers-list">
+            <li>
+                <label>Part:</label>
+                <output><%= @request.part_name %></output>
+                <br>
+                <br>
+                <label>Description:</label>
+                <output><%= @request.part_description %></output>
+                <br>
+                <br>
+                <label>For:</label>
+                <output><%= @request.car_year %> <%= @request.car_make %> <%= @request.car_model %></output>
+                <br>
+                <br>
+                <output><%= image_tag @request.image_url(:medium) %></output>
+                <br>
+                <br>
+                <%= render 'form', offer: @offer %>
+            </li>
+        </ul>
+    </div>
+</div>
