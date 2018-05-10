@@ -101,10 +101,9 @@ nav ul {
 /* Notice and Alert */
 #notice-wrapper {
     position: absolute;
-    top: 0;
+    top: 10vh;
     width: 100%;
     z-index: 999;
-    /* background: #87d8d3; */
 }
 
 #notice-wrapper p {
@@ -152,4 +151,15 @@ footer ul li a {
 footer ul li a:hover {
     height: 100%;
     color: #227722;
+}
+
+/* Login Form */
+
+#new_user {
+    display: flex;
+    flex-direction: column;
+}
+
+.field {
+    width: 200px;
 }
