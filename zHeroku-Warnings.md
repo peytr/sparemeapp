@@ -65,3 +65,24 @@ __original navbar links__
           <%= link_to "Sign up", new_user_registration_path %>
       <% end %>
     </nav>
+
+
+__Original charge form__
+    <%= form_tag accept_offer_offer_path(@offer) do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description=<%= "PAYMENT" %>
+          data-amount=<%= @offer.price %>
+          data-currency="AUD"
+          data-email=<%= current_user.email %>
+          
+          data-locale="auto"></script>
+<% end %>

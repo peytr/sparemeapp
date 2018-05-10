@@ -1,7 +1,7 @@
 class OffersController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :set_offer, only: [:show, :edit, :update, :delete]
+  before_action :set_offer, only: [:show, :edit, :update, :delete, :charge]
 
   def index
     puts "REQUEST_ID: #{params[:request_id]}"
@@ -48,31 +48,25 @@ class OffersController < ApplicationController
 
   # Stripe Method
   # posts/:id/booking
-  def accept_offer
-    if current_user.stripe_id.blank?
-      customer = Stripe::Customer.create(
-        email: params[:stripeEmail],
-        source: params[:stripeToken],
-      )
-      current_user.stripe_id = customer.id
-      current_user.save!
-    end
+  def charge
+    amount = @offer.price
 
-    charge = Stripe::Charge.create(
-      customer: current_user.stripe_id,
-      amount: @offer.price,
-      description: @offer.message,
-      currency: "AUD",
+    customer = Stripe::Customer.create(
+      email:  params[:stripeEmail],
+      source: params[:stripeToken]
     )
 
-    # @post.bookings << current_user
-    # curent_user.charges << Charge.new(charge_id: charge.id)
-    flash[:notice] = "Payment made!"
-    redirect_back fallback_location: offers_path
-  rescue Stripe::CardError => e
-    flash[:error] = e.message
-    redirect_to new_charge_path
-end
+    charge = Stripe::Charge.create(
+      customer:     customer.id,
+      amount:       amount,
+      description:  @offer.message,
+      currency:     'aud'
+    )
+
+    flash[:notice] = 'Payment made!'
+
+    redirect_to offers_path
+  end
   
   private
   

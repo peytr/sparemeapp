@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   resources :offers do
     member do
-      post :accept_offer
+      post 'charge'
     end
   end
 
