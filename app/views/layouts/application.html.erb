@@ -10,6 +10,17 @@
   </head>
 
   <body>
+
+    <% if notice %>
+      <div id="notice-wrapper">
+        <p class="notice"><%= notice %></p>
+      </div>
+    <% elsif alert %>
+      <div id="notice-wrapper">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
+    
     <div class="flex-container body">
       <header id="header">
         <nav>
@@ -28,10 +39,9 @@
           </ul>
         </nav>
       </header>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
 
       <%= yield %>
+
 
       <footer id="footer">
         <ul class="actions">

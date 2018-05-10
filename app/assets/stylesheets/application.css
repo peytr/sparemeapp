@@ -27,10 +27,12 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    align-content: center;
 }
 
 nav {
     background: #000;
+    margin: 0;
 }
 
 nav ul {
@@ -76,6 +78,10 @@ nav ul {
     color: #fff;
 }
 
+.logo span {
+    color: #227722;
+}
+
 @media only screen and (min-width: 30em) {
     nav {
         display: flex;
@@ -92,10 +98,29 @@ nav ul {
     }
 }
 
+/* Notice and Alert */
+#notice-wrapper {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background: #87d8d3;
+}
+
+#notice-wrapper p {
+    padding: 2.5rem 0;
+    text-align: center;
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+
 /* Footer */
 .flex-container {
     flex: 1 0 auto;
-
 }
 
 footer {
