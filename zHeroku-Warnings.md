@@ -48,3 +48,6 @@ __was in application.html.erb__
         <%= link_to "Login", new_user_session_path %> |
         <%= link_to "Sign up", new_user_registration_path %>
     <% end %>
+
+__link if statement__
+<% if current_user == Request.where(user_id: current_user) %>

@@ -14,11 +14,9 @@
 </p>
 
 <% if policy(@request).edit? %>
-    <%= link_to  "Edit Request", edit_request_path  %> | 
+    <%= link_to  "Edit Request", edit_request_path  %> |
 <% end %>
 
-<% if current_user == Request.where(user_id: current_user) %>
-    <%= link_to "Make a Spare Parts Offer", new_request_offer_path(@request) %>
-<% else %>
-    <%= link_to  "View Offers", offer_path  %>
-<% end %>
+<%= link_to  "View Offers", request_offers_path(@request) %> |
+
+<%= link_to "Make a Spare Parts Offer", new_request_offer_path(@request) %>

@@ -3,6 +3,12 @@ class OffersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_offer, only: [:show, :edit, :update, :delete]
 
+  def index
+    puts "REQUEST_ID: #{params[:request_id]}"
+    @offers = Offer.all
+    # @offers = Offer.where(requestid: :request_id)
+  end
+
   def new
     @offer = Offer.new
     @request = Request.find(params[:request_id])
