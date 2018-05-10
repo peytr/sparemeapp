@@ -5,8 +5,8 @@ class OffersController < ApplicationController
 
   def index
     puts "REQUEST_ID: #{params[:request_id]}"
-    @offers = Offer.all
-    # @offers = Offer.where(requestid: :request_id)
+    # @offers = Offer.all
+    @offers = Offer.where(request_id: params[:request_id])
   end
 
   def new
