@@ -35,8 +35,8 @@ class OffersController < ApplicationController
   end
 
   def show
-    @offer = Offer.find(offer_params)
-    # @offer = Offer.find(params[:id])
+    # @offer = Offer.find(offer_params)
+    @offer = Offer.find(params[:id])
     # @offer.user = current_user
     # @offer = current_user.offer
     # @offer = Offer.find_or_initialize_by(user: current_user)
@@ -61,14 +61,14 @@ class OffersController < ApplicationController
     charge = Stripe::Charge.create(
       customer: current_user.stripe_id,
       amount: @offer.price,
-      description: @offer.description,
+      description: @offer.message,
       currency: "AUD",
     )
 
     # @post.bookings << current_user
     # curent_user.charges << Charge.new(charge_id: charge.id)
     flash[:notice] = "Payment made!"
-    redirect_back fallback_location: request_path
+    redirect_back fallback_location: offers_path
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_charge_path

@@ -14,8 +14,22 @@
  *= require_self
  */
 
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
 
- .logo {
+body {
+    margin: 0;
+}
+
+#header {
+    height: 100px;
+    background: #000;
+}
+
+.logo {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 3em;
     text-decoration: none;
@@ -25,16 +39,35 @@
     margin: 10px;
 }
 
-#header {
-    height: 80px;
-    background: #000;
-}
-
 #header a {
     text-decoration: none;
     color: #fff;
 }
 
-.right {
-    justify-content: flex-end;
-}
+
+
+.main-nav {
+    display: -webkit-flex;
+    display: flex;
+  }
+  .main-nav li:first-child {
+    margin-right: auto;
+  }
+  .main-nav a {
+    margin: 10px;
+    border-radius: 5px;
+    background: #60B99A;
+    color: #fff;
+      display: block;
+      padding: 15px;
+      text-decoration: none;
+  }
+  .main-nav .logo {
+    /* background: #4584b1; */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3em;
+    text-decoration: none;
+    font-weight: 900;
+    letter-spacing: -2px;
+    color: #fff;
+  }

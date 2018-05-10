@@ -1,22 +1,7 @@
-<h1>Available Offers</h1>
-
-<h3>Reqeusted Parts Details</h3>
-
-
 <h3>Offer Details</h3>
 
-
-    <% @offer.where(request_id: current_id).find_each do |offer| %>
-    <p>Offer Message</p>
-      <p><%= offer.message %></p>
-    <p>Offer Price</p>
-      <p><%= @offer.price %></p>
-      <% end %>
-
-
-
-
-
+<p>Message: <%= @offer.message %></p>
+<p>Price: <%= @offer.price %></p>
 
 
 <% if user_signed_in? %>
@@ -25,10 +10,5 @@
 <%= link_to new_user_session_path, class:'stripe-button-el' do %>
   <span style="display: block; min-height: 30px;">Accept Offer and Buy</span>
   <% end %>
-<% end %>
-
-<%= form_with model: @request, url: offer_path, method: :get, local: true, class: 'form' do |form| %>
-  <%= form.hidden_field :id %>
-  <%= form.submit "Make Appraisal", class: 'btn btn-secondary' %>
 <% end %>
 

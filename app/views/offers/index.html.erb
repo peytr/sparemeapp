@@ -1,7 +1,9 @@
-<h1>Request Offers</h1>
-
+<h1>Available Offers</h1>
 
 <% @offers.each do |offer| %>
-    <p>Part Name: <%= offer.message %></p>
-    <p>Part Description: <%= offer.price %></p>
+    <p>Message from supplier: <%= offer.message %></p>
+    <p>Part Price: <%= offer.price %></p>
+    <p>
+    <%= link_to  "Accept Offer", offer %>
+    </p>
 <% end %>

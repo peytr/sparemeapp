@@ -51,3 +51,17 @@ __was in application.html.erb__
 
 __link if statement__
 <% if current_user == Request.where(user_id: current_user) %>
+
+__original navbar links__
+
+<a href=" / " class="logo">SPARE<span>ME</span></a>
+    <nav class="nav-items">
+      <% if user_signed_in? %>
+          <%= link_to "Home", root_path %> |
+          <%= link_to 'Profile', profile_path %> |
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      <% else %>
+          <%= link_to "Login", new_user_session_path %> |
+          <%= link_to "Sign up", new_user_registration_path %>
+      <% end %>
+    </nav>
