@@ -1,9 +1,20 @@
-<h1>Available Offers</h1>
-
-<% @offers.each do |offer| %>
-    <p>Message from supplier: <%= offer.message %></p>
-    <p>Part Price: <%= offer.price %></p>
-    <p>
-    <%= link_to  "Accept Offer", offer %>
-    </p>
-<% end %>
+<div class="offers-show">
+    <div class="row">
+        <h3>Available Offers</h3>
+        <ul class="offers-list">
+            <% @offers.each do |offer| %>
+            <li>
+                <label>Message from supplier:</label>
+                 <output><%= offer.message %></output>
+                 <br>
+                 <br>
+                <label>Part Price:</label>
+                <output><%= offer.price %></output>
+            </li>
+            <div class="accept-offer">
+                <%= link_to  "Accept Offer", offer, class: "accept-offer-submit" %>
+            </div>
+            <% end %>
+        </ul>
+    </div>
+</div>

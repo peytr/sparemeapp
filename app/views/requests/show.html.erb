@@ -1,22 +1,39 @@
-<h3>Your Spare Parts Request</h3>
+<div class="requests-show">
+    <div class="row">
+    <h3>Parts Request</h3>
+        <ul class="requests-list">
+            <li>
+                <label>Part:</label>
+                <output><%= @request.part_name %></output>
+                <br>
+                <br>
+                <label>Description:</label>
+                <output><%= @request.part_description %></output>
+                <br>
+                <br>
+                <label>For:</label>
+                <output><%= @request.car_year %> <%= @request.car_make %> <%= @request.car_model %></output>
+                <br>
+                <br>
+                <output><%= image_tag @request.image_url(:medium) %></output>
+            </li>
+        </ul>
 
-<p>
-    <p>Part Name: <%= @request.part_name %></p>
-</p>
-<p>
-    <p>Part Description: <%= @request.part_description %></p>
-</p>
-<p>
-    <p>Your Car: <%= @request.car_year %> <%= @request.car_make %> <%= @request.car_model %> <%= @request.car_series %> </p>
-</p>
-<p>
-    <p><%= image_tag @request.image_url(:medium) %></p>
-</p>
+        <div class="requests-buttons">
+            <% if policy(@request).edit? %>
+            <div class="edit">
+                <%= link_to  "Edit Request", edit_request_path, class: "button-submit"  %>
+            </div>
+            <% end %>
+            <div class="show">
+                <%= link_to  "View Offers", request_offers_path(@request), class: "button-submit" %>
+            </div>
+            <div class="offer">
+                <%= link_to "Offer Part", new_request_offer_path(@request), class: "button-submit" %>
+            </div>
+        </div>
+    </div>
+</div>
 
-<% if policy(@request).edit? %>
-    <%= link_to  "Edit Request", edit_request_path  %> |
-<% end %>
 
-<%= link_to  "View Offers", request_offers_path(@request) %> |
 
-<%= link_to "Make a Spare Parts Offer", new_request_offer_path(@request) %>
