@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   patch '/profile', to: 'profiles#update'
 
   post '/requests/:request_id/offers', to: 'offers#create', as: 'requests_offer'
-  # patch '/request/:request_id', to: 'requests#update'
+  
 
   resources :requests do
     resources :offers
@@ -26,7 +26,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'offer/show', to: 'offers#show'
+  # get 'offer/show', to: 'offers#show'
 
   # get '/requests/index', to: 'requests#index'
   # get '/requests/new', to: 'requests#new'

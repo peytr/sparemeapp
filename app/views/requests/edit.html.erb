@@ -1,7 +1,8 @@
+
 <h1>Edit Spare Parts Request</h1>
 
 
-<%= form_with(model: request, url: edit_request_path, local: true) do |f| %>
+<%= form_with(model: @request, url: request_path, local: true) do |f| %>
 
     <div class="field">  
         <%= f.label :part_name %><br />

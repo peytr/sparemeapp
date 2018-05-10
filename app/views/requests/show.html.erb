@@ -20,5 +20,5 @@
 <% if current_user == Request.where(user_id: current_user) %>
     <%= link_to "Make a Spare Parts Offer", new_request_offer_path(@request) %>
 <% else %>
-    <%= link_to  "View Offers", offer_show_path  %>
+    <%= link_to  "View Offers", offer_path  %>
 <% end %>

@@ -21,5 +21,20 @@
     text-decoration: none;
     font-weight: 900;
     letter-spacing: -2px;
-    color: #000;
+    color: #fff;
+    margin: 10px;
+}
+
+#header {
+    height: 80px;
+    background: #000;
+}
+
+#header a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.right {
+    justify-content: flex-end;
 }

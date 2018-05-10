@@ -12,6 +12,10 @@ class RequestPolicy < ApplicationPolicy
         return true if user.present? && user == request.user
     end
 
+    def update?
+        return true if user.present? && user == request.user
+    end
+
     def destroy?
         return true if user.present? && user == request.user
     end

@@ -22,7 +22,7 @@ class RequestsController < ApplicationController
     end
 
     def update
-        @request = current_user.request
+        @request.user = current_user
 
         if @request.update(request_params)
             flash[:notice] = 'Spare Parts Request Updated'

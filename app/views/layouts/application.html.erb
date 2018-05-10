@@ -5,13 +5,14 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css' %>
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
 
+  <div class="container body">
   <header id="header">
     <a href=" / " class="logo">SPARE<span>ME</span></a>
     <nav class="right">
@@ -32,6 +33,6 @@
 
     <%= yield %>
 
-    
+  </div>
   </body>
 </html>

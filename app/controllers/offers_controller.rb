@@ -1,7 +1,7 @@
 class OffersController < ApplicationController
 
   before_action :authenticate_user!
-  # before_action :set_offer, only: [:show, :edit, :update, :delete]
+  before_action :set_offer, only: [:show, :edit, :update, :delete]
 
   def new
     @offer = Offer.new
@@ -71,7 +71,7 @@ end
   private
   
   def set_offer
-    # @offer = Offer.find(params[:id])
+    @offer = Offer.find(params[:id])
   end
 
   def offer_params
