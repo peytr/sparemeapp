@@ -1,21 +1,22 @@
 # SpareMe - Car Spare Parts Marketplace
-## https://spare-me.com.au
+## https://serene-temple-28659.herokuapp.com/
 SpareMe is a community oriented, two sided marketplace for car enthusiasts, automotive professionals and the everyday car repair do it yourself-er. The main idea behind SpareMe is to remove the pain of searching for car spare parts, instead having the spare parts market come to you.
 
 ## Contents
 - **[Problem](#Problem)**
 - **[Solution](#Solution)**
-- **[Trello Board](#TrelloBoard)**
-- **[User Stories](#UserStories)**
+- **[Trello Board](#Trello_Board)**
+- **[User Stories](#User_Stories)**
 - **[Personas](#Personas)**
+- **[User Workflow](#User_Workflow)**
 - **[Entity Relationship Diagram](#ERD)**
-- **[Mood Board](#Moodboard)**
-- **[Inspiration](#Inspiration)**
+- **[Mood Board](#Mood_Board)**
+- **[Logo](#Logo)**
 - **[Wireframes](#Wireframes)**
-- **[Features](#Features)**
-- **[Ruby Gems](#RubyGem)**
+- **[Ruby Gems](#Ruby_Gems)**
 - **[Challenges](#Challenges)**
-- **[Coding](#Coding)**
+- **[Code Review](#Code_Review)**
+- **[Future Development and Improvements](#Future_Development_and_Improvements)**
 
 ## Problem
 Finding specific car parts new or used can be an expensive, time consuming and difficult process. 
@@ -134,13 +135,14 @@ The ERD is the most critical part of my design and is essentially one of the big
 | - id               | - id
 | - username         | - username 
 | - password         | - password
+|                    | - stripe_id
 | __Profiles__       | __Profiles__
 | - id               | - id              
 | - user_id          | - user_id         
 | - first_name       | - first_name      
 | - last_name        | - last_name       
 | - business_name    | - business_name   
-| - phone_number     | - phone_number    
+| - phone_number     | - business_number    
 | - house_number     | - street_number    
 | - street_name      | - street_name     
 | - suburb           | - suburb          
@@ -165,7 +167,7 @@ The ERD is the most critical part of my design and is essentially one of the big
 | __Part Offerings__ | __Offers__
 | - id               | - id              
 | - user_id          | - user_id         
-| - parts_request_id | - parts_request_id
+| - parts_request_id | - request_id
 | - price            | - message        
 | - approved_at      | - price 
 | - approved         | - image_data       
@@ -191,11 +193,21 @@ The ERD is the most critical part of my design and is essentially one of the big
 | - id               |  
 | - sender_id        |  
 | - recipient_id     |  
+
+__Relationships__
+- profiles belong to users and users have one profile
+- requests belong to users and users have many requests
+- offers belongs to users and users has many offers
+- offers belong to requests and requests has many offers
+
+<br>
   
 ![](bin/readme-images/ERD-06.png)
 
 
-## Design Inspiration and Mood Board
+**[Back to Contents](#Contents)**
+
+## Mood Board
 For some color design direction I browsed through websites of some of the major car parts retail chains in Australia. Repco, Autobarn, Burson and Supercheap Auto. The main colour themes are black and red.
 
 For something different I looked at other mainstream automotive businesses. Shannons Insurance, Peter Stevens and UltraTune. The main colour theme from these sites is Green and White.
@@ -221,8 +233,7 @@ Figma mood board
 ![Mood Board Image](bin/readme-images/colours-font.png)
 
 ## Logo
-The site logo is a simple spanner in a circle to symbolise repairs.\ 
-This will be the favicon. \
+The site logo is a simple spanner in a circle to symbolise repairs.
 The Spare Me site name text is not spaced but the words differentiated by a colour change.
 
 ![Mood Board Image](bin/readme-images/logo.png)
@@ -236,32 +247,38 @@ The Spare Me site name text is not spaced but the words differentiated by a colo
 ![](bin/readme-images/wireframe-desktop.png)
 
 
-## Ruby Gems used in this Project
-- Devise
-- Rspec-rails
-- Mailgun-ruby
-- Fastimage
-- Image_processing
-- Mini_magick
-- Shrine
-- Stripe
-- Bootstrap 4
-- Pundit
+## Ruby Gems
+Gems added to the project.
+- devise
+- pundit
+- stripe
+- shrine
+- mailgun-ruby
+- faker
+- rspec-rails
+- dotenv-rails
+
+Shrine dependencies
+- mini_magick
+- image_processing
+- aws-sdk-s3
 
 ## Challenges
-- Pushing to Heroku
-- 
+- Getting the ERD right and understanding the relationships was difficult at the start. There were several revisits and changes made to the ERD during the build process.
+- Couldn't get the search function to work. The search request shows up in the parameters but the search result is not returned.
+- Pushing to Heroku. There were several steps required and several push attempts to get the site live on Heroku. Even after the site push was successful the site still is not fully functioning on Heroku as it does locally. The sign up and create an offer functions are not working on Heroku.
+- Even though I am happy with the outcome of the MVP, overall the whole coding process was a battle. It seemed like a two steps forward, ten steps back journey however the amount of learning was enormous.
 
-## Future Development / Improvements
+## Code Review
+There were several fellow students who assisted with code reviews and help. Barbara, Meng, Mill, Cameo, Maxi, Richard, Chris, AJ and many more. Thank you to all for your assistance.
+
+## Future Development and Improvements
 - Add messaging function between buyers and sellers.
 - Upload several images for one request.
 - Add image upload for offers.
 - Make images responsive.
+- Part requestor is notified when a parts offer is recieved, within app and via email.
+- Part offerer is notified when a part offer is accepted and purchased, within app and via email.
+- Add the favicon.
 
-
-Final To Do
-- Clear DB
-- Load db with some users, requests, offers
-- Save some images for presentation
-- Finalise readme
-- Final check
+**[Back to Contents](#Contents)**
