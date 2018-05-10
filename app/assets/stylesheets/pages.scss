@@ -21,3 +21,51 @@
     font-size: 2em;
     text-align: center;
 }
+
+.home-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40vh;
+}
+
+.button-submit {
+    flex: 1;
+    color: #fff;
+    background: #2f80ed;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button-submit:hover {
+    background: #227722;
+}
+
+.button-browse {
+    flex: 1;
+    color: #fff;
+    background: #2f80ed;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button-browse:hover {
+    background: #227722;
+}

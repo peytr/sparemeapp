@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require_tree .
 
+$(document).on('turbolinks:load', ready); 
 
 $(document).ready(function(){
     setTimeout(function(){
