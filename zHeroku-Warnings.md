@@ -86,3 +86,19 @@ __Original charge form__
           
           data-locale="auto"></script>
 <% end %>
+
+__last header logo nav__
+<div class="logo">
+      <a href="#" class="logo">SPARE<span>ME</span></a>
+    </div>
+    <nav>
+    <ul class="main-nav">
+      <% if user_signed_in? %>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to 'Profile', profile_path %></li>
+      <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+      <li><%= link_to "Login", new_user_session_path %></li>
+      <li><%= link_to "Sign up", new_user_registration_path %></li>
+      <% end %>
+    </ul>

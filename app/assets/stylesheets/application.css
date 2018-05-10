@@ -14,39 +14,117 @@
  *= require_self
  */
 
-.flex-container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+/* Application */
+body, html {
+    height: 100%;
+    font-size: 100%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
     margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-#header {
-    height: 140px;
+nav {
     background: #000;
 }
 
-.main-nav {
-    display: -webkit-flex;
-    display: flex;
-  }
+nav ul {
+    list-style: none;
+    padding: 0;
+    background: #000;
+}
 
-  .main-nav a {
-    margin: 10px;
+nav ul li a {
     color: #fff;
-      display: block;
-      padding: 15px;
-      text-decoration: none;
-  }
+    text-decoration: none;
+    padding: .8rem 1rem;
+    display: block;
+    line-height: 1;
+}
 
-  .logo {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 2em;
+nav ul li {
+    border-bottom: 1px solid #227722;
+    height: 1;
+    flex: 1 0 auto;
+}
+
+nav ul li a:hover {
+    height: 100%;
+    color: #227722;
+}
+
+nav ul {
+    margin: 0;
+}
+
+#logo {
+    background: #000;
+    padding: 0;
+    margin: 1rem;
+}
+
+.logo {
+    font-size: 3em;
     text-decoration: none;
     font-weight: 900;
     letter-spacing: -2px;
     color: #fff;
-  }
+}
+
+@media only screen and (min-width: 30em) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+        background: #000;
+    }
+    nav ul {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    nav ul li {
+        border-bottom: none;
+    }
+}
+
+/* Footer */
+.flex-container {
+    flex: 1 0 auto;
+
+}
+
+footer {
+    height: 6em;
+    background: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+footer ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    background: #000;
+}
+
+footer ul li {
+    display: inline;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: .8rem 1rem;
+    line-height: 1;
+}
+
+footer ul li a:hover {
+    height: 100%;
+    color: #227722;
+}

@@ -10,47 +10,35 @@
   </head>
 
   <body>
+    <div class="flex-container body">
+      <header id="header">
+        <nav>
+          <div id=logo>
+            <a href="#" class="logo">SPARE<span>ME</span></a>
+          </div>
+          <ul>
+            <% if user_signed_in? %>
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to 'Profile', profile_path %></li>
+            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+            <li><%= link_to "Login", new_user_session_path %></li>
+            <li><%= link_to "Sign up", new_user_registration_path %></li>
+            <% end %>
+          </ul>
+        </nav>
+      </header>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
 
-  <div class="flex-container body">
-  <header id="header">
-    <div class="logo">
-      <a href="#" class="logo">SPARE<span>ME</span></a>
+      <%= yield %>
+
+      <footer id="footer">
+        <ul class="actions">
+          <li><%= link_to 'About Us', contact_path %></li>
+          <li><%= link_to 'Contact Us', contact_path %></li>
+        </ul>
+      </footer>
     </div>
-    <nav>
-    <ul class="main-nav">
-      <% if user_signed_in? %>
-      <li><%= link_to "Home", root_path %></li>
-      <li><%= link_to 'Profile', profile_path %></li>
-      <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-      <% else %>
-      <li><%= link_to "Login", new_user_session_path %></li>
-      <li><%= link_to "Sign up", new_user_registration_path %></li>
-      <% end %>
-    </ul>
-    </nav>
-  </header>
-
-   
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <%= yield %>
-
-    <footer id="footer">
-				<div class="inner">
-          <%= link_to 'Contact Us', contact_path %>
-					<ul class="actions">
-						<li><a href="#">(000) 000-0000</a></li>
-						<li><a href="#">sample@mail.com</a></li>
-						<li>120 Spencer Street, Melbourne, VIC 3000 AUSTRALIA</li>
-					</ul>
-				</div>
-				<div class="copyright">
-					&copy; Peter Cavalot</a>
-			    </div>
-    </footer>
-
-    
-  </div>
   </body>
 </html>
