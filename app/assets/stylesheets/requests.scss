@@ -3,71 +3,64 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.requests-show {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
+.see-parts-request {
     display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 .row {
     width: 40vw;
 }
 
-.requests-list {
+.see-request-content {
     list-style-type: none;
     padding: 0;
     margin: 0 auto;
   }
 
-.requests-list li {
-    border: 1px solid gray;
+.see-request-content li {
+    border: 1px solid #227722;
     border-radius: 5px;
-    background-color: lightgray;
+    background-color: #e2e2e2;
     padding: 10px;
     margin-bottom: .8em;
 }
 
-.requests-list label {
+.see-request-content label {
     font-weight: 600;
 }
 
-.show-request {
-    flex: 1;
-    color: #fff;
-    background: #227722;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    display: inline-block;
-    font-size: 18px;
-    margin: 0px 0px 30px 0px;
-    cursor: pointer;
-}
+// .show-request {
+//     flex: 1;
+//     color: #fff;
+//     background: #227722;
+//     border: none;
+//     border-radius: 5px;
+//     color: white;
+//     padding: 15px 32px;
+//     text-align: center;
+//     display: inline-block;
+//     font-size: 18px;
+//     margin: 0px 0px 30px 0px;
+//     cursor: pointer;
+// }
 
-.show-request a {
-    text-decoration: none;
-}
+// .show-request a {
+//     text-decoration: none;
+// }
 
-.show-request:hover {
-    background: #2f80ed;
-}
+// .show-request:hover {
+//     background: #2f80ed;
+// }
 
-// Buttons
+// View Parts Request Buttons
 .requests-buttons {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-bottom: 5vh;
 }
 
 .requests-buttons a {

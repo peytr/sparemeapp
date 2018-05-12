@@ -29,9 +29,7 @@
     </div>
 </div>
 
-<hr>
-
-<div class="requests-show">
+<div class="profile-show">
     <div class="row">
     <h3>Your Parts Requests</h3>
         <% Request.where(user_id: current_user).find_each do |request| %>
@@ -45,8 +43,8 @@
                     <output><%= request.car_year %> <%= request.car_make %> <%= request.car_model %></output>
                 </li>
             </ul>
-            <div class="show-request">
-                <p><%= link_to  "See Request", request %></p>
+            <div class="show-request-button">
+                <%= link_to  "See Request", request %>
             </div>
             
         <% end %>

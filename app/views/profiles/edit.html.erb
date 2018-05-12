@@ -1,58 +1,60 @@
-<h1>Your Profile</h1>
-
-<%= form_with(model: @profile, url: profile_path, local: true) do |form| %>
-
-    <div class="field">
-        <%= form.label :first_name %><br />
-        <%= form.text_field :first_name, autofocus: true, required: true %>
+<div class="profile-form">
+    <div class="row">
+        <h1>Your Profile</h1>
+        <%= form_with(model: @profile, url: profile_path, local: true) do |form| %>
+            <div class="field">
+                <%= form.label :first_name %><br />
+                <%= form.text_field :first_name, autofocus: true, required: true, :class => "form-field" %>
+            </div>
+            <br />
+            <div class="field">
+                <%= form.label :last_name %><br />
+                <%= form.text_field :last_name, required: true, :class => "form-field" %>
+            </div>
+            <br />
+            <div class="field">
+                <%= form.label :street_number %><br />
+                <%= form.number_field :street_number, required: true, :class => "form-field" %>
+            </div>
+            <br />
+            <div class="field">
+                <%= form.label :street_name %><br />
+                <%= form.text_field :street_name, required: true, :class => "form-field" %>
+            </div>
+            <br />
+            <div class="field">
+                <%= form.label :suburb %><br />
+                <%= form.text_field :suburb, required: true, :class => "form-field" %>
+            </div>
+            <br />
+            <div class="field">
+                <%= form.label :state %><br />
+                <%= form.text_field :state, required: true, :class => "form-field" %>
+            </div>
+            <br />
+            <div class="field">
+                <%= form.label :postcode %><br />
+                <%= form.number_field :postcode, required: true, :class => "form-field" %>
+            </div>
+            <br />
+            <div class="field">
+                <%= form.label :country %><br />
+                <%= form.text_field :country, required: true, :class => "form-field" %>
+            </div>
+            <br />
+            <p><span>Optional for Business Owners</span></p>
+            <div class="field">
+                <%= form.label :business_name %><br />
+                <%= form.text_field :business_name, :class => "form-field" %>
+            </div>
+            <br />
+            <div class="field">
+                <%= form.label :business_number %><br />
+                <%= form.text_field :business_number, :class => "form-field" %>
+            </div>
+            <p>
+                <%= form.submit 'Update Profile', :class => 'submit-button' %>
+            </p>
+        <% end %>
     </div>
-
-    <div class="field">
-        <%= form.label :last_name %><br />
-        <%= form.text_field :last_name, required: true  %>
-    </div>
-    <br />
-    <div class="field">
-        <%= form.label :street_number %><br />
-        <%= form.number_field :street_number, required: true  %>
-    </div>
-    <br />
-    <div class="field">
-        <%= form.label :street_name %><br />
-        <%= form.text_field :street_name, required: true  %>
-    </div>
-    <br />
-    <div class="field">
-        <%= form.label :suburb %><br />
-        <%= form.text_field :suburb, required: true  %>
-    </div>
-    <br />
-    <div class="field">
-        <%= form.label :state %><br />
-        <%= form.text_field :state, required: true  %>
-    </div>
-    <br />
-    <div class="field">
-        <%= form.label :postcode %><br />
-        <%= form.number_field :postcode, required: true  %>
-    </div>
-    <br />
-    <div class="field">
-        <%= form.label :country %><br />
-        <%= form.text_field :country, required: true  %>
-    </div>
-    <br />
-    <div class="field">
-        <%= form.label :business_name %><br />
-        <%= form.text_field :business_name %>
-    </div>
-    <br />
-    <div class="field">
-        <%= form.label :business_number %><br />
-        <%= form.text_field :business_number %>
-    </div>
-    <p>
-        <%= form.submit %>
-    </p>
-
-<% end %>
+</div>

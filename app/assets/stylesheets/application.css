@@ -24,10 +24,13 @@ body, html {
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-content: center;
+}
+
+.page-content {
+    flex: 1 0 auto;
 }
 
 nav {
@@ -51,12 +54,9 @@ nav ul li a {
 
 nav ul li {
     border-bottom: 1px solid #227722;
-    height: 1;
-    flex: 1 0 auto;
 }
 
 nav ul li a:hover {
-    height: 100%;
     color: #227722;
 }
 
@@ -99,41 +99,40 @@ nav ul {
 }
 
 /* Notice and Alert */
-#notice-wrapper {
+.notice-container {
+    color: #227722;
+    background: #2f80ed
     position: absolute;
     top: 10vh;
     width: 100%;
     z-index: 999;
 }
 
-#notice-wrapper p {
+.notice-wrapper p {
     padding: 2.5rem 0;
     text-align: center;
     margin: 0;
     font-size: 1.25rem;
     font-weight: 700;
-    color: #fff;
+    color: #227722;
     letter-spacing: 1px;
 }
 
 
 /* Footer */
-.flex-container {
-    flex: 1 0 auto;
-}
-
 footer {
-    height: 6em;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    height: 10vh;
     background: #000;
     color: #fff;
-    display: flex;
-    align-items: center;
 }
 
 footer ul {
     margin: 0;
-    list-style: none;
     padding: 0;
+    list-style: none;
     background: #000;
 }
 
@@ -153,13 +152,62 @@ footer ul li a:hover {
     color: #227722;
 }
 
-/* Login Form */
-
-#new_user {
+/* Forms Style */
+.form-body {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.field {
-    width: 200px;
+.form-field {
+    width: 40vw;
+    height: 4vh;
+    border: 1px solid #86B486;
+    background: #e2e2e2;
+    border-radius: 2px;
+    padding-left: 10px;
+    font-size: 1em;
+}
+
+.form-area {
+    width: 40vw;
+    height: 10vh;
+    border: 1px solid #86B486;
+    background: #e2e2e2;
+    border-radius: 2px;
+    padding-left: 10px;
+    font-size: 1em;
+}
+
+.submit-button {
+    height: 5vh;
+    width: 10vw;
+    border-radius: 5px;
+    background: #227722;
+    color: white;
+    font-size: 1em;
+}
+
+.submit-button:hover {
+    background: #2f80ed;
+}
+
+/* Login Page */
+.login-title, .signup-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.login-buttons-list {
+    list-style: none;
+}
+
+.login-buttons-list li {
+    display: inline-block;
 }

@@ -2,42 +2,40 @@
 
     <div class="field">  
         <%= f.label :part_name %><br />
-        <%= f.text_field :part_name, autofocus: true, required: true  %>
+        <%= f.text_field :part_name, autofocus: true, required: true, :class => "form-field" %>
     </div>
-
+    <br />
     <div class="field">  
         <%= f.label :part_description %><br />
-        <%= f.text_area :part_description, required: true  %>
+        <%= f.text_area :part_description, required: true, :class => "form-area" %>
     </div>
-
+    <br />
     <div class="field">  
         <%= f.label :car_make %><br />
-        <%= f.text_field :car_make  %>
+        <%= f.text_field :car_make, required: true, :class => "form-field" %>
     </div>
-
+    <br />
     <div class="field">  
         <%= f.label :car_model %><br />
-        <%= f.text_field :car_model %>
+        <%= f.text_field :car_model, required: true, :class => "form-field" %>
     </div>
-
+    <br />
     <div class="field">  
         <%= f.label :car_series %><br />
-        <%= f.text_field :car_series %>
+        <%= f.text_field :car_series, required: true, :class => "form-field" %>
     </div>
-
+    <br />
     <div class="field">  
         <%= f.label :car_year %><br />
-        <%= f.text_field :car_year %>
+        <%= f.text_field :car_year, required: true, :class => "form-field" %>
     </div>
-
+    <br />
     <div class="field">  
         <%= f.label :image %><br />
-        <%= f.hidden_field :image, value: @request.cached_image_data %>
+        <%= f.hidden_field :image, required: true, value: @request.cached_image_data %>
         <%= f.file_field :image %>
     </div>
-
-    <p>
-        <%= f.submit %>
-    </p>
+    <br />
+    <%= f.submit 'Submit Request', :class => 'submit-button'%>
 
 <% end %>
