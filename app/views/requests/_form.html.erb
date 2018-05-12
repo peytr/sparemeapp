@@ -1,9 +1,8 @@
-
 <%= form_with(model: request, url: requests_path, local: true) do |f| %>
 
     <div class="field">  
         <%= f.label :part_name %><br />
-        <%= f.text_field :part_name, required: true  %>
+        <%= f.text_field :part_name, autofocus: true, required: true  %>
     </div>
 
     <div class="field">  

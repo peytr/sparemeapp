@@ -3,20 +3,20 @@
 SpareMe is a community oriented, two sided marketplace for car enthusiasts, automotive professionals and the everyday car repair do it yourself-er. The main idea behind SpareMe is to remove the pain of searching for car spare parts, instead having the spare parts market come to you.
 
 ## Contents
-- **[Problem](#Problem)**
-- **[Solution](#Solution)**
-- **[Trello Board](#Trello_Board)**
-- **[User Stories](#User_Stories)**
-- **[Personas](#Personas)**
-- **[User Workflow](#User_Workflow)**
-- **[Entity Relationship Diagram](#ERD)**
-- **[Mood Board](#Mood_Board)**
-- **[Logo](#Logo)**
-- **[Wireframes](#Wireframes)**
-- **[Ruby Gems](#Ruby_Gems)**
-- **[Challenges](#Challenges)**
-- **[Code Review](#Code_Review)**
-- **[Future Development and Improvements](#Future_Development_and_Improvements)**
+**[Problem](#Problem)**\
+**[Solution](#Solution)**\
+**[Trello Board](#Trello-Board)**\
+**[User Stories](#User-Stories)**\
+**[Personas](#Personas)**\
+**[User Workflow](#User-Workflow)**\
+**[Entity Relationship Diagram](#ERD)**\
+**[Mood Board](#Mood-Board)**\
+**[Logo](#Logo)**\
+**[Wireframes](#Wireframes)**\
+**[Ruby Gems](#Ruby-Gems)**\
+**[Challenges](#Challenges)**\
+**[Code Review](#Code-Review)**\
+**[Future Development and Improvements](#Future-Development-and-Improvements)**\
 
 ## Problem
 Finding specific car parts new or used can be an expensive, time consuming and difficult process. 
@@ -273,12 +273,12 @@ Shrine dependencies
 There were several fellow students who assisted with code reviews and help. Barbara, Meng, Mill, Cameo, Maxi, Richard, Chris, AJ and many more. Thank you to all for your assistance.
 
 ## Future Development and Improvements
-- Add messaging function between buyers and sellers.
-- Upload several images for one request.
-- Add image upload for offers.
+- Add direct messaging function between buyers and sellers.
+- Add the ability to upload several images for a parts request.
+- Add the ability to upload and when offering a part.
 - Make images responsive.
 - Part requestor is notified when a parts offer is recieved, within app and via email.
 - Part offerer is notified when a part offer is accepted and purchased, within app and via email.
 - Add the favicon.
 
-**[Back to Contents](#Contents)**
+[Back to Contents](#Contents)
