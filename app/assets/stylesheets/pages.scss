@@ -2,20 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.home-tagline {
+.home-top-section {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 0;
+    flex-direction: column;
     height: 40vh;
     background: #227722;
 }
 
-.home-tagline p {
-    color: #fff;
+.home-tagline {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    background: #227722;
+}
+
+.home-tagline span {    
+    color: #ffff;
     font-size: 2em;
     text-align: center;
+}
+
+.home-bottom-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 40vh;
+    width: 100%;
 }
 
 .home-buttons {
@@ -23,7 +37,6 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 12vh;
 }
 
 .button-submit {

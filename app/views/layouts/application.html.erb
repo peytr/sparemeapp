@@ -4,48 +4,40 @@
     <title>Spare Me</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="site">
-    <header id="header">
-      <nav>
-        <div id=logo>
-          <a href="/" class="logo">SPARE<span>ME</span></a>
-        </div>
-        <ul>
-          <% if user_signed_in? %>
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to 'Profile', profile_path %></li>
-          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-          <% else %>
-          <li><%= link_to "Login", new_user_session_path %></li>
-          <li><%= link_to "Sign up", new_user_registration_path %></li>
-          <% end %>
-        </ul>
-      </nav>
-    </header>
-    <div class="notice-container">
-      <% if notice %>
-        <div class="notice-wrapper">
-          <p class="notice"><%= notice %></p>
-        </div>
-      <% elsif alert %>
-        <div class="notice-wrapper">
-          <p class="alert"><%= alert %></p>
-        </div>
-      <% end %>
+  <body>
+    <div class="site">
+      <div class="site-content">
+        <header class="site-header">
+          <nav>
+            <div id=logo>
+              <a href="/" class="logo">SPARE<span>ME</span></a>
+            </div>
+            <ul>
+              <% if user_signed_in? %>
+              <li><%= link_to "Home", root_path %></li>
+              <li><%= link_to 'Profile', profile_path %></li>
+              <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+              <% else %>
+              <li><%= link_to "Login", new_user_session_path %></li>
+              <li><%= link_to "Sign up", new_user_registration_path %></li>
+              <% end %>
+            </ul>
+          </nav>
+        </header>
+
+        <%= yield %>
+
+        <footer id="site-footer">
+          <ul class="actions">
+            <li><%= link_to 'About Us', contact_path %></li>
+            <li><%= link_to 'Contact Us', contact_path %></li>
+          </ul>
+        </footer>
+      </div>
     </div>
-
-    <%= yield %>
-
-    <footer id="footer">
-      <ul class="actions">
-        <li><%= link_to 'About Us', contact_path %></li>
-        <li><%= link_to 'Contact Us', contact_path %></li>
-      </ul>
-    </footer>
   </body>
 </html>
