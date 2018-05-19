@@ -38,6 +38,8 @@ My trello board is the main driver of my project management. It allowed me to pl
 
 ![Trello Image](bin/readme-images/trello-02.png)
 
+[Back to Contents](#contents)
+
 ## User Stories
 My user stories are composed of 3 target markets (Buyers, Sellers and Guests). Guests are those who have not signed in but as potential buyers and sellers can browse the already requested spare parts posts. Buyers and Sellers are the registered users who can benefit from all the features of the site. Also, since it is a two-sided marketplace, a buyer can be a seller and a seller can be a buyer.
 
@@ -65,6 +67,8 @@ My user stories are composed of 3 target markets (Buyers, Sellers and Guests). G
 - As a guest, I want to browse parts that have been listed for sale, so that I can make the purchase without having to post as a buyer.
 - As a guest, I would like to enter my car details, so that I can see what is currently available to buy for my car.
 
+[Back to Contents](#contents)
+
 ## Personas
 ### As a Buyer
 __Racheal__
@@ -82,6 +86,8 @@ was driving a 2004 Ford Falcon BA. He hadn't had the car serviced for years and 
 
 ## User Workflow
 ![](bin/readme-images/workflow-03.png)
+
+[Back to Contents](#contents)
 
 __Registration__
 - User clicks on get started.
@@ -128,6 +134,8 @@ __Buyer Offer Page__
 - If accepted buyer is redirected to payment.
 - Buyer completes payment.
 - Buyer is redirected to home screen.
+
+[Back to Contents](#contents)
 
 ## ERD
 The ERD is the most critical part of my design and is essentially one of the biggest things I have done for my project. Planning my tables ahead gave me an idea of how I want to work with my Rails models however the ERD plan was revisted and reconfigured several times during the build process.
@@ -203,12 +211,13 @@ __Relationships__
 - offers belongs to users and users has many offers
 - offers belong to requests and requests has many offers
 
+[Back to Contents](#contents)
+
 <br>
   
 ![](bin/readme-images/ERD-06.png)
 
 
-**[Back to Contents](#Contents)**
 
 ## Mood Board
 For some color design direction I browsed through websites of some of the major car parts retail chains in Australia. Repco, Autobarn, Burson and Supercheap Auto. The main colour themes are black and red.
@@ -231,9 +240,13 @@ Figma mood board
 
 ![Mood Board Image](bin/readme-images/moodboard-figma.png)
 
+[Back to Contents](#contents)
+
 ## Colours and Font Choice
 
 ![Mood Board Image](bin/readme-images/colours-font.png)
+
+[Back to Contents](#contents)
 
 ## Logo
 The site logo is a simple spanner in a circle to symbolise repairs.
@@ -249,6 +262,7 @@ The Spare Me site name text is not spaced but the words differentiated by a colo
 ### Desktop
 ![](bin/readme-images/wireframe-desktop.png)
 
+[Back to Contents](#contents)
 
 ## Ruby Gems
 Gems added to the project.
@@ -265,6 +279,8 @@ Shrine dependencies
 - mini_magick
 - image_processing
 - aws-sdk-s3
+
+[Back to Contents](#contents)
 
 ## Challenges
 - Getting the ERD right and understanding the relationships was difficult at the start. There were several revisits and changes made to the ERD during the build process.
@@ -284,4 +300,4 @@ There were several fellow students who assisted with code reviews and help. Barb
 - Part offerer is notified when a part offer is accepted and purchased, within app and via email.
 - Add the favicon.
 
-[Back to Contents](#Contents)
+[Back to Contents](#contents)
