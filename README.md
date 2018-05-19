@@ -1,5 +1,8 @@
 # SpareMe - Car Spare Parts Marketplace
 ## https://serene-temple-28659.herokuapp.com/
+
+Before continuing I just want to declare that this web app was created as part of Coder Academys Term-2 Rails project. It was submitted as is after 11 days which included three days of design (no code) and one weekend, therefore it has some bugs and is not complete. I intend to leave this repository as is and have created a second "Spareme" which over time I will improve.
+
 SpareMe is a community oriented, two sided marketplace for car enthusiasts, automotive professionals and the everyday car repair do it yourself-er. The main idea behind SpareMe is to remove the pain of searching for car spare parts, instead having the spare parts market come to you.
 
 ## Contents
