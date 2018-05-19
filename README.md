@@ -6,20 +6,20 @@ Before continuing I just want to declare that this web app was created as part o
 SpareMe is a community oriented, two sided marketplace for car enthusiasts, automotive professionals and the everyday car repair do it yourself-er. The main idea behind SpareMe is to remove the pain of searching for car spare parts, instead having the spare parts market come to you.
 
 ## Contents
-**[Problem](#Problem)**\
-**[Solution](#Solution)**\
-**[Trello Board](#Trello-Board)**\
-**[User Stories](#User-Stories)**\
-**[Personas](#Personas)**\
-**[User Workflow](#User-Workflow)**\
-**[Entity Relationship Diagram](#ERD)**\
-**[Mood Board](#Mood-Board)**\
-**[Logo](#Logo)**\
-**[Wireframes](#Wireframes)**\
-**[Ruby Gems](#Ruby-Gems)**\
-**[Challenges](#Challenges)**\
-**[Code Review](#Code-Review)**\
-**[Future Development and Improvements](#Future-Development-and-Improvements)**\
+**[Problem](#problem)**\
+**[Solution](#solution)**\
+**[Trello Board](#trello-board)**\
+**[User Stories](#user-stories)**\
+**[Personas](#personas)**\
+**[User Workflow](#user-workflow)**\
+**[Entity Relationship Diagram](#erd)**\
+**[Mood Board](#mood-board)**\
+**[Logo](#logo)**\
+**[Wireframes](#wireframes)**\
+**[Ruby Gems](#ruby-gems)**\
+**[Challenges](#challenges)**\
+**[Code Review](#code-review)**\
+**[Future Development and Improvements](#future-development-and-improvements)**\
 
 ## Problem
 Finding specific car parts new or used can be an expensive, time consuming and difficult process. 
